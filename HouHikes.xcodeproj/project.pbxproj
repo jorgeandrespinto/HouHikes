@@ -11,6 +11,8 @@
 		6909E65E2C3B386E001FDD58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6909E65D2C3B386E001FDD58 /* ContentView.swift */; };
 		6909E6602C3B3870001FDD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6909E65F2C3B3870001FDD58 /* Assets.xcassets */; };
 		6909E6632C3B3870001FDD58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6909E6622C3B3870001FDD58 /* Preview Assets.xcassets */; };
+		6909E66D2C3B3AFE001FDD58 /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6909E66C2C3B3AFE001FDD58 /* Hike.swift */; };
+		6909E66F2C3B486A001FDD58 /* HikeDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6909E66E2C3B486A001FDD58 /* HikeDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		6909E65D2C3B386E001FDD58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6909E65F2C3B3870001FDD58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6909E6622C3B3870001FDD58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6909E66C2C3B3AFE001FDD58 /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
+		6909E66E2C3B486A001FDD58 /* HikeDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeDetailScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				6909E65B2C3B386E001FDD58 /* HouHikesApp.swift */,
-				6909E65D2C3B386E001FDD58 /* ContentView.swift */,
+				6909E66A2C3B3ABB001FDD58 /* Models */,
+				6909E6692C3B3AA3001FDD58 /* Views */,
+				6909E66B2C3B3AE8001FDD58 /* Controllers */,
 				6909E65F2C3B3870001FDD58 /* Assets.xcassets */,
 				6909E6612C3B3870001FDD58 /* Preview Content */,
 			);
@@ -65,6 +71,30 @@
 				6909E6622C3B3870001FDD58 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6909E6692C3B3AA3001FDD58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6909E65D2C3B386E001FDD58 /* ContentView.swift */,
+				6909E66E2C3B486A001FDD58 /* HikeDetailScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6909E66A2C3B3ABB001FDD58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6909E66C2C3B3AFE001FDD58 /* Hike.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6909E66B2C3B3AE8001FDD58 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6909E66D2C3B3AFE001FDD58 /* Hike.swift in Sources */,
+				6909E66F2C3B486A001FDD58 /* HikeDetailScreen.swift in Sources */,
 				6909E65E2C3B386E001FDD58 /* ContentView.swift in Sources */,
 				6909E65C2C3B386E001FDD58 /* HouHikesApp.swift in Sources */,
 			);
