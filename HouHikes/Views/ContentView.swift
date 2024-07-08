@@ -9,20 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let hikes = [Hike(name: "Memorial Park", photo: "memorial", miles: 11.2), Hike(name: "Terry Hershey Trail", photo: "hershey", miles: 6.5), Hike(name: "Brays Bayou Park", photo: "brays", miles: 3.6)]
+    @State private var hikeName: String = ""
+    @State private var hikeMiles: String = ""
+    @State private var hikes = [Hike(name: "Memorial Park", photo: "memorial", miles: 11.2), Hike(name: "Terry Hershey Trail", photo: "hershey", miles: 6.5), Hike(name: "Brays Bayou Park", photo: "brays", miles: 3.6)]
+    @State private var search: String = ""
+    @State private var hikesFiltered: [Hike] = []
     
     var body: some View {
         NavigationStack{
-            List(hikes) { hike in
+            VStack{
+                TextField("Enter hike name", text: $hikeName)
+                    .padding()
+                    .textFieldStyle(.roundedBorder)
+                TextField("Enter Miles of the hike route", text: $hikeMiles)
+                    .padding()
+                    .textFieldStyle(.roundedBorder).onSubmit {
+                        hikes.append(Hike(name: hikeName, photo: "default", miles: Double(hikeMiles) ?? 0.0))
+                        hikeName = ""
+                        hikeMiles = ""
+                        filterHikes()
+                    }
+            }.padding()
+            List(hikesFiltered) { hike in
                 NavigationLink(value: hike){
                     HikeCellView(hike: hike)
                 }
-            }.navigationTitle("Hikes")
-                .navigationDestination(for: Hike.self) { hike in
-                    HikeDetailScreen(hike: hike)
-                }
+            }
+            .navigationTitle("Hikes")
+            .navigationDestination(for: Hike.self) { hike in
+                HikeDetailScreen(hike: hike)
+            }
+            .searchable(text: $search)
+            .onChange(of: search){
+                filterHikes()
+            }
+        }
+        .onAppear{
+            hikesFiltered = hikes
         }
     }
+    private func filterHikes() {
+            if search.isEmpty {
+                hikesFiltered = hikes
+            } else {
+                hikesFiltered = hikes.filter { $0.name.localizedCaseInsensitiveContains(search) }
+            }
+        }
 }
 
 #Preview {
